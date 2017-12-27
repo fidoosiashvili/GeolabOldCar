@@ -71,6 +71,14 @@ namespace GeolabOldCcar.Models
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<user> users
+		{
+			get
+			{
+				return this.GetTable<user>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Email> Emails
 		{
 			get
@@ -92,6 +100,77 @@ namespace GeolabOldCcar.Models
 			get
 			{
 				return this.GetTable<Slider>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Social> Socials
+		{
+			get
+			{
+				return this.GetTable<Social>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[user]")]
+	public partial class user
+	{
+		
+		private string _id;
+		
+		private string _Email;
+		
+		private string _Password;
+		
+		public user()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="NChar(10)")]
+		public string id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(50)")]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this._Password = value;
+				}
 			}
 		}
 	}
@@ -122,6 +201,8 @@ namespace GeolabOldCcar.Models
 		
 		private System.Nullable<bool> _JobOffer;
 		
+		private System.Nullable<System.DateTime> _crateDate;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -146,6 +227,8 @@ namespace GeolabOldCcar.Models
     partial void OnupdatesChanged();
     partial void OnJobOfferChanging(System.Nullable<bool> value);
     partial void OnJobOfferChanged();
+    partial void OncrateDateChanging(System.Nullable<System.DateTime> value);
+    partial void OncrateDateChanged();
     #endregion
 		
 		public Email()
@@ -353,6 +436,26 @@ namespace GeolabOldCcar.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_crateDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> crateDate
+		{
+			get
+			{
+				return this._crateDate;
+			}
+			set
+			{
+				if ((this._crateDate != value))
+				{
+					this.OncrateDateChanging(value);
+					this.SendPropertyChanging();
+					this._crateDate = value;
+					this.SendPropertyChanged("crateDate");
+					this.OncrateDateChanged();
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -382,9 +485,9 @@ namespace GeolabOldCcar.Models
 		
 		private int _Id;
 		
-		private string _OptionName;
+		private string _IconDesc;
 		
-		private string _OptionIcon;
+		private string _Icon1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -392,10 +495,10 @@ namespace GeolabOldCcar.Models
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
-    partial void OnOptionNameChanging(string value);
-    partial void OnOptionNameChanged();
-    partial void OnOptionIconChanging(string value);
-    partial void OnOptionIconChanged();
+    partial void OnIconDescChanging(string value);
+    partial void OnIconDescChanged();
+    partial void OnIcon1Changing(string value);
+    partial void OnIcon1Changed();
     #endregion
 		
 		public Icon()
@@ -423,42 +526,42 @@ namespace GeolabOldCcar.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OptionName", DbType="NVarChar(50)")]
-		public string OptionName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IconDesc", DbType="NVarChar(50)")]
+		public string IconDesc
 		{
 			get
 			{
-				return this._OptionName;
+				return this._IconDesc;
 			}
 			set
 			{
-				if ((this._OptionName != value))
+				if ((this._IconDesc != value))
 				{
-					this.OnOptionNameChanging(value);
+					this.OnIconDescChanging(value);
 					this.SendPropertyChanging();
-					this._OptionName = value;
-					this.SendPropertyChanged("OptionName");
-					this.OnOptionNameChanged();
+					this._IconDesc = value;
+					this.SendPropertyChanged("IconDesc");
+					this.OnIconDescChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OptionIcon", DbType="NVarChar(50)")]
-		public string OptionIcon
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Icon", Storage="_Icon1", DbType="NVarChar(50)")]
+		public string Icon1
 		{
 			get
 			{
-				return this._OptionIcon;
+				return this._Icon1;
 			}
 			set
 			{
-				if ((this._OptionIcon != value))
+				if ((this._Icon1 != value))
 				{
-					this.OnOptionIconChanging(value);
+					this.OnIcon1Changing(value);
 					this.SendPropertyChanging();
-					this._OptionIcon = value;
-					this.SendPropertyChanged("OptionIcon");
-					this.OnOptionIconChanged();
+					this._Icon1 = value;
+					this.SendPropertyChanged("Icon1");
+					this.OnIcon1Changed();
 				}
 			}
 		}
@@ -498,6 +601,10 @@ namespace GeolabOldCcar.Models
 		
 		private string _SliderImageExt;
 		
+		private System.Nullable<System.DateTime> _date;
+		
+		private string _description;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -510,6 +617,10 @@ namespace GeolabOldCcar.Models
     partial void OnSliderUrlChanged();
     partial void OnSliderImageExtChanging(string value);
     partial void OnSliderImageExtChanged();
+    partial void OndateChanging(System.Nullable<System.DateTime> value);
+    partial void OndateChanged();
+    partial void OndescriptionChanging(string value);
+    partial void OndescriptionChanged();
     #endregion
 		
 		public Slider()
@@ -597,6 +708,46 @@ namespace GeolabOldCcar.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="Date")]
+		public System.Nullable<System.DateTime> date
+		{
+			get
+			{
+				return this._date;
+			}
+			set
+			{
+				if ((this._date != value))
+				{
+					this.OndateChanging(value);
+					this.SendPropertyChanging();
+					this._date = value;
+					this.SendPropertyChanged("date");
+					this.OndateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="NVarChar(50)")]
+		public string description
+		{
+			get
+			{
+				return this._description;
+			}
+			set
+			{
+				if ((this._description != value))
+				{
+					this.OndescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._description = value;
+					this.SendPropertyChanged("description");
+					this.OndescriptionChanged();
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -614,6 +765,69 @@ namespace GeolabOldCcar.Models
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Social")]
+	public partial class Social
+	{
+		
+		private System.Nullable<int> _id;
+		
+		private string _SocialUrl;
+		
+		private string _SocialName;
+		
+		public Social()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int")]
+		public System.Nullable<int> id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SocialUrl", DbType="NVarChar(150)")]
+		public string SocialUrl
+		{
+			get
+			{
+				return this._SocialUrl;
+			}
+			set
+			{
+				if ((this._SocialUrl != value))
+				{
+					this._SocialUrl = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SocialName", DbType="NVarChar(50)")]
+		public string SocialName
+		{
+			get
+			{
+				return this._SocialName;
+			}
+			set
+			{
+				if ((this._SocialName != value))
+				{
+					this._SocialName = value;
+				}
 			}
 		}
 	}
