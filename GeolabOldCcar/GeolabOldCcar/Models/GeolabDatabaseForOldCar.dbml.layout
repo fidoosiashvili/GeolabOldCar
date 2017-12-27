@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="GeolabDatabaseForOldCar">
+  <DataContextMoniker Name="/GeolabDatabaseForOldCarDataContext" />
+  <nestedChildShapes>
+    <classShape Id="76c3f03f-10f4-46b4-a015-6a293ebf4400" absoluteBounds="4.125, 1.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/GeolabDatabaseForOldCarDataContext/Icon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e73abe78-d992-4b9f-875f-e74ccf2d20a7" absoluteBounds="4.14, 2.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
