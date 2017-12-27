@@ -152,6 +152,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GeolabDatabaseForOldCar.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Mailmodel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
