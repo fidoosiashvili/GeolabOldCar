@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using GeolabOldCcar.Models;
 
 namespace GeolabOldCcar.Controllers
 {
@@ -25,6 +26,13 @@ namespace GeolabOldCcar.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        public ActionResult mail()
+        {
+            DataConnectDataContext db = new DataConnectDataContext();
+
+
+            return View(db.Emails.ToList());
         }
     }
 }

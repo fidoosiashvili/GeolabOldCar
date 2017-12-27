@@ -147,10 +147,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\GeolabDatabaseForOldCar.designer.cs">
+    <Compile Include="Models\DataConnect.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GeolabDatabaseForOldCar.dbml</DependentUpon>
+      <DependentUpon>DataConnect.dbml</DependentUpon>
     </Compile>
     <Compile Include="Models\Mailmodel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -167,13 +167,13 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Models\GeolabDatabaseForOldCar.dbml">
+    <Content Include="Models\DataConnect.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>GeolabDatabaseForOldCar.designer.cs</LastGenOutput>
+      <LastGenOutput>DataConnect.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
-    <None Include="Models\GeolabDatabaseForOldCar.dbml.layout">
-      <DependentUpon>GeolabDatabaseForOldCar.dbml</DependentUpon>
+    <None Include="Models\DataConnect.dbml.layout">
+      <DependentUpon>DataConnect.dbml</DependentUpon>
     </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -200,6 +200,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\mail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
