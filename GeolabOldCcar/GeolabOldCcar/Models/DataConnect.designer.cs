@@ -33,12 +33,15 @@ namespace GeolabOldCcar.Models
     partial void InsertEmail(Email instance);
     partial void UpdateEmail(Email instance);
     partial void DeleteEmail(Email instance);
-    partial void InsertIcon(Icon instance);
-    partial void UpdateIcon(Icon instance);
-    partial void DeleteIcon(Icon instance);
+    partial void InsertSocial(Social instance);
+    partial void UpdateSocial(Social instance);
+    partial void DeleteSocial(Social instance);
     partial void InsertSlider(Slider instance);
     partial void UpdateSlider(Slider instance);
     partial void DeleteSlider(Slider instance);
+    partial void InsertIcon(Icon instance);
+    partial void UpdateIcon(Icon instance);
+    partial void DeleteIcon(Icon instance);
     #endregion
 		
 		public DataConnectDataContext() : 
@@ -71,14 +74,6 @@ namespace GeolabOldCcar.Models
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<user> users
-		{
-			get
-			{
-				return this.GetTable<user>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Email> Emails
 		{
 			get
@@ -87,11 +82,19 @@ namespace GeolabOldCcar.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<Icon> Icons
+		public System.Data.Linq.Table<user> users
 		{
 			get
 			{
-				return this.GetTable<Icon>();
+				return this.GetTable<user>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Social> Socials
+		{
+			get
+			{
+				return this.GetTable<Social>();
 			}
 		}
 		
@@ -103,11 +106,337 @@ namespace GeolabOldCcar.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<Social> Socials
+		public System.Data.Linq.Table<Icon> Icons
 		{
 			get
 			{
-				return this.GetTable<Social>();
+				return this.GetTable<Icon>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Email")]
+	public partial class Email : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _EmailFrom;
+		
+		private string _EmailTo;
+		
+		private string _EmailText;
+		
+		private string _gender;
+		
+		private string _EmailSubject;
+		
+		private bool _images;
+		
+		private bool _promotions;
+		
+		private bool _updates;
+		
+		private bool _JobOffer;
+		
+		private System.DateTime _crateDate;
+		
+		private string _name;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnEmailFromChanging(string value);
+    partial void OnEmailFromChanged();
+    partial void OnEmailToChanging(string value);
+    partial void OnEmailToChanged();
+    partial void OnEmailTextChanging(string value);
+    partial void OnEmailTextChanged();
+    partial void OngenderChanging(string value);
+    partial void OngenderChanged();
+    partial void OnEmailSubjectChanging(string value);
+    partial void OnEmailSubjectChanged();
+    partial void OnimagesChanging(bool value);
+    partial void OnimagesChanged();
+    partial void OnpromotionsChanging(bool value);
+    partial void OnpromotionsChanged();
+    partial void OnupdatesChanging(bool value);
+    partial void OnupdatesChanged();
+    partial void OnJobOfferChanging(bool value);
+    partial void OnJobOfferChanged();
+    partial void OncrateDateChanging(System.DateTime value);
+    partial void OncrateDateChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    #endregion
+		
+		public Email()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmailFrom", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string EmailFrom
+		{
+			get
+			{
+				return this._EmailFrom;
+			}
+			set
+			{
+				if ((this._EmailFrom != value))
+				{
+					this.OnEmailFromChanging(value);
+					this.SendPropertyChanging();
+					this._EmailFrom = value;
+					this.SendPropertyChanged("EmailFrom");
+					this.OnEmailFromChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmailTo", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string EmailTo
+		{
+			get
+			{
+				return this._EmailTo;
+			}
+			set
+			{
+				if ((this._EmailTo != value))
+				{
+					this.OnEmailToChanging(value);
+					this.SendPropertyChanging();
+					this._EmailTo = value;
+					this.SendPropertyChanged("EmailTo");
+					this.OnEmailToChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmailText", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string EmailText
+		{
+			get
+			{
+				return this._EmailText;
+			}
+			set
+			{
+				if ((this._EmailText != value))
+				{
+					this.OnEmailTextChanging(value);
+					this.SendPropertyChanging();
+					this._EmailText = value;
+					this.SendPropertyChanged("EmailText");
+					this.OnEmailTextChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gender", DbType="NVarChar(5) NOT NULL", CanBeNull=false)]
+		public string gender
+		{
+			get
+			{
+				return this._gender;
+			}
+			set
+			{
+				if ((this._gender != value))
+				{
+					this.OngenderChanging(value);
+					this.SendPropertyChanging();
+					this._gender = value;
+					this.SendPropertyChanged("gender");
+					this.OngenderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmailSubject", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string EmailSubject
+		{
+			get
+			{
+				return this._EmailSubject;
+			}
+			set
+			{
+				if ((this._EmailSubject != value))
+				{
+					this.OnEmailSubjectChanging(value);
+					this.SendPropertyChanging();
+					this._EmailSubject = value;
+					this.SendPropertyChanged("EmailSubject");
+					this.OnEmailSubjectChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_images", DbType="Bit NOT NULL")]
+		public bool images
+		{
+			get
+			{
+				return this._images;
+			}
+			set
+			{
+				if ((this._images != value))
+				{
+					this.OnimagesChanging(value);
+					this.SendPropertyChanging();
+					this._images = value;
+					this.SendPropertyChanged("images");
+					this.OnimagesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_promotions", DbType="Bit NOT NULL")]
+		public bool promotions
+		{
+			get
+			{
+				return this._promotions;
+			}
+			set
+			{
+				if ((this._promotions != value))
+				{
+					this.OnpromotionsChanging(value);
+					this.SendPropertyChanging();
+					this._promotions = value;
+					this.SendPropertyChanged("promotions");
+					this.OnpromotionsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_updates", DbType="Bit NOT NULL")]
+		public bool updates
+		{
+			get
+			{
+				return this._updates;
+			}
+			set
+			{
+				if ((this._updates != value))
+				{
+					this.OnupdatesChanging(value);
+					this.SendPropertyChanging();
+					this._updates = value;
+					this.SendPropertyChanged("updates");
+					this.OnupdatesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JobOffer", DbType="Bit NOT NULL")]
+		public bool JobOffer
+		{
+			get
+			{
+				return this._JobOffer;
+			}
+			set
+			{
+				if ((this._JobOffer != value))
+				{
+					this.OnJobOfferChanging(value);
+					this.SendPropertyChanging();
+					this._JobOffer = value;
+					this.SendPropertyChanged("JobOffer");
+					this.OnJobOfferChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_crateDate", DbType="DateTime NOT NULL")]
+		public System.DateTime crateDate
+		{
+			get
+			{
+				return this._crateDate;
+			}
+			set
+			{
+				if ((this._crateDate != value))
+				{
+					this.OncrateDateChanging(value);
+					this.SendPropertyChanging();
+					this._crateDate = value;
+					this.SendPropertyChanged("crateDate");
+					this.OncrateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -175,393 +504,91 @@ namespace GeolabOldCcar.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Email")]
-	public partial class Email : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Social")]
+	public partial class Social : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _Id;
+		private int _id;
 		
-		private string _EmailFrom;
+		private string _SocialUrl;
 		
-		private string _EmailTo;
-		
-		private string _EmailText;
-		
-		private string _gender;
-		
-		private string _EmailSubject;
-		
-		private System.Nullable<bool> _images;
-		
-		private System.Nullable<bool> _promotions;
-		
-		private System.Nullable<bool> _updates;
-		
-		private System.Nullable<bool> _JobOffer;
-		
-		private System.Nullable<System.DateTime> _crateDate;
+		private string _SocialName;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnEmailFromChanging(string value);
-    partial void OnEmailFromChanged();
-    partial void OnEmailToChanging(string value);
-    partial void OnEmailToChanged();
-    partial void OnEmailTextChanging(string value);
-    partial void OnEmailTextChanged();
-    partial void OngenderChanging(string value);
-    partial void OngenderChanged();
-    partial void OnEmailSubjectChanging(string value);
-    partial void OnEmailSubjectChanged();
-    partial void OnimagesChanging(System.Nullable<bool> value);
-    partial void OnimagesChanged();
-    partial void OnpromotionsChanging(System.Nullable<bool> value);
-    partial void OnpromotionsChanged();
-    partial void OnupdatesChanging(System.Nullable<bool> value);
-    partial void OnupdatesChanged();
-    partial void OnJobOfferChanging(System.Nullable<bool> value);
-    partial void OnJobOfferChanged();
-    partial void OncrateDateChanging(System.Nullable<System.DateTime> value);
-    partial void OncrateDateChanged();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnSocialUrlChanging(string value);
+    partial void OnSocialUrlChanged();
+    partial void OnSocialNameChanging(string value);
+    partial void OnSocialNameChanged();
     #endregion
 		
-		public Email()
+		public Social()
 		{
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
 		{
 			get
 			{
-				return this._Id;
+				return this._id;
 			}
 			set
 			{
-				if ((this._Id != value))
+				if ((this._id != value))
 				{
-					this.OnIdChanging(value);
+					this.OnidChanging(value);
 					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmailFrom", DbType="NVarChar(50)")]
-		public string EmailFrom
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SocialUrl", DbType="NVarChar(MAX)")]
+		public string SocialUrl
 		{
 			get
 			{
-				return this._EmailFrom;
+				return this._SocialUrl;
 			}
 			set
 			{
-				if ((this._EmailFrom != value))
+				if ((this._SocialUrl != value))
 				{
-					this.OnEmailFromChanging(value);
+					this.OnSocialUrlChanging(value);
 					this.SendPropertyChanging();
-					this._EmailFrom = value;
-					this.SendPropertyChanged("EmailFrom");
-					this.OnEmailFromChanged();
+					this._SocialUrl = value;
+					this.SendPropertyChanged("SocialUrl");
+					this.OnSocialUrlChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmailTo", DbType="NVarChar(50)")]
-		public string EmailTo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SocialName", DbType="NVarChar(50)")]
+		public string SocialName
 		{
 			get
 			{
-				return this._EmailTo;
+				return this._SocialName;
 			}
 			set
 			{
-				if ((this._EmailTo != value))
+				if ((this._SocialName != value))
 				{
-					this.OnEmailToChanging(value);
+					this.OnSocialNameChanging(value);
 					this.SendPropertyChanging();
-					this._EmailTo = value;
-					this.SendPropertyChanged("EmailTo");
-					this.OnEmailToChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmailText", DbType="NVarChar(MAX)")]
-		public string EmailText
-		{
-			get
-			{
-				return this._EmailText;
-			}
-			set
-			{
-				if ((this._EmailText != value))
-				{
-					this.OnEmailTextChanging(value);
-					this.SendPropertyChanging();
-					this._EmailText = value;
-					this.SendPropertyChanged("EmailText");
-					this.OnEmailTextChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gender", DbType="NVarChar(5)")]
-		public string gender
-		{
-			get
-			{
-				return this._gender;
-			}
-			set
-			{
-				if ((this._gender != value))
-				{
-					this.OngenderChanging(value);
-					this.SendPropertyChanging();
-					this._gender = value;
-					this.SendPropertyChanged("gender");
-					this.OngenderChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmailSubject", DbType="NVarChar(50)")]
-		public string EmailSubject
-		{
-			get
-			{
-				return this._EmailSubject;
-			}
-			set
-			{
-				if ((this._EmailSubject != value))
-				{
-					this.OnEmailSubjectChanging(value);
-					this.SendPropertyChanging();
-					this._EmailSubject = value;
-					this.SendPropertyChanged("EmailSubject");
-					this.OnEmailSubjectChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_images", DbType="Bit")]
-		public System.Nullable<bool> images
-		{
-			get
-			{
-				return this._images;
-			}
-			set
-			{
-				if ((this._images != value))
-				{
-					this.OnimagesChanging(value);
-					this.SendPropertyChanging();
-					this._images = value;
-					this.SendPropertyChanged("images");
-					this.OnimagesChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_promotions", DbType="Bit")]
-		public System.Nullable<bool> promotions
-		{
-			get
-			{
-				return this._promotions;
-			}
-			set
-			{
-				if ((this._promotions != value))
-				{
-					this.OnpromotionsChanging(value);
-					this.SendPropertyChanging();
-					this._promotions = value;
-					this.SendPropertyChanged("promotions");
-					this.OnpromotionsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_updates", DbType="Bit")]
-		public System.Nullable<bool> updates
-		{
-			get
-			{
-				return this._updates;
-			}
-			set
-			{
-				if ((this._updates != value))
-				{
-					this.OnupdatesChanging(value);
-					this.SendPropertyChanging();
-					this._updates = value;
-					this.SendPropertyChanged("updates");
-					this.OnupdatesChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JobOffer", DbType="Bit")]
-		public System.Nullable<bool> JobOffer
-		{
-			get
-			{
-				return this._JobOffer;
-			}
-			set
-			{
-				if ((this._JobOffer != value))
-				{
-					this.OnJobOfferChanging(value);
-					this.SendPropertyChanging();
-					this._JobOffer = value;
-					this.SendPropertyChanged("JobOffer");
-					this.OnJobOfferChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_crateDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> crateDate
-		{
-			get
-			{
-				return this._crateDate;
-			}
-			set
-			{
-				if ((this._crateDate != value))
-				{
-					this.OncrateDateChanging(value);
-					this.SendPropertyChanging();
-					this._crateDate = value;
-					this.SendPropertyChanged("crateDate");
-					this.OncrateDateChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Icon")]
-	public partial class Icon : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _IconDesc;
-		
-		private string _Icon1;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnIconDescChanging(string value);
-    partial void OnIconDescChanged();
-    partial void OnIcon1Changing(string value);
-    partial void OnIcon1Changed();
-    #endregion
-		
-		public Icon()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IconDesc", DbType="NVarChar(50)")]
-		public string IconDesc
-		{
-			get
-			{
-				return this._IconDesc;
-			}
-			set
-			{
-				if ((this._IconDesc != value))
-				{
-					this.OnIconDescChanging(value);
-					this.SendPropertyChanging();
-					this._IconDesc = value;
-					this.SendPropertyChanged("IconDesc");
-					this.OnIconDescChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Icon", Storage="_Icon1", DbType="NVarChar(50)")]
-		public string Icon1
-		{
-			get
-			{
-				return this._Icon1;
-			}
-			set
-			{
-				if ((this._Icon1 != value))
-				{
-					this.OnIcon1Changing(value);
-					this.SendPropertyChanging();
-					this._Icon1 = value;
-					this.SendPropertyChanged("Icon1");
-					this.OnIcon1Changed();
+					this._SocialName = value;
+					this.SendPropertyChanged("SocialName");
+					this.OnSocialNameChanged();
 				}
 			}
 		}
@@ -595,8 +622,6 @@ namespace GeolabOldCcar.Models
 		
 		private int _Id;
 		
-		private string _SliderName;
-		
 		private string _SliderUrl;
 		
 		private string _SliderImageExt;
@@ -611,8 +636,6 @@ namespace GeolabOldCcar.Models
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
-    partial void OnSliderNameChanging(string value);
-    partial void OnSliderNameChanged();
     partial void OnSliderUrlChanging(string value);
     partial void OnSliderUrlChanged();
     partial void OnSliderImageExtChanging(string value);
@@ -628,7 +651,7 @@ namespace GeolabOldCcar.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
@@ -644,26 +667,6 @@ namespace GeolabOldCcar.Models
 					this._Id = value;
 					this.SendPropertyChanged("Id");
 					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SliderName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string SliderName
-		{
-			get
-			{
-				return this._SliderName;
-			}
-			set
-			{
-				if ((this._SliderName != value))
-				{
-					this.OnSliderNameChanging(value);
-					this.SendPropertyChanging();
-					this._SliderName = value;
-					this.SendPropertyChanged("SliderName");
-					this.OnSliderNameChanged();
 				}
 			}
 		}
@@ -769,65 +772,136 @@ namespace GeolabOldCcar.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Social")]
-	public partial class Social
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Icon")]
+	public partial class Icon : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private System.Nullable<int> _id;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _SocialUrl;
+		private int _Id;
 		
-		private string _SocialName;
+		private string _IconDesc;
 		
-		public Social()
+		private string _IconName;
+		
+		private string _iconExt;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnIconDescChanging(string value);
+    partial void OnIconDescChanged();
+    partial void OnIconNameChanging(string value);
+    partial void OnIconNameChanged();
+    partial void OniconExtChanging(string value);
+    partial void OniconExtChanged();
+    #endregion
+		
+		public Icon()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int")]
-		public System.Nullable<int> id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
 		{
 			get
 			{
-				return this._id;
+				return this._Id;
 			}
 			set
 			{
-				if ((this._id != value))
+				if ((this._Id != value))
 				{
-					this._id = value;
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SocialUrl", DbType="NVarChar(150)")]
-		public string SocialUrl
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IconDesc", DbType="NVarChar(50)")]
+		public string IconDesc
 		{
 			get
 			{
-				return this._SocialUrl;
+				return this._IconDesc;
 			}
 			set
 			{
-				if ((this._SocialUrl != value))
+				if ((this._IconDesc != value))
 				{
-					this._SocialUrl = value;
+					this.OnIconDescChanging(value);
+					this.SendPropertyChanging();
+					this._IconDesc = value;
+					this.SendPropertyChanged("IconDesc");
+					this.OnIconDescChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SocialName", DbType="NVarChar(50)")]
-		public string SocialName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IconName", DbType="VarChar(50)")]
+		public string IconName
 		{
 			get
 			{
-				return this._SocialName;
+				return this._IconName;
 			}
 			set
 			{
-				if ((this._SocialName != value))
+				if ((this._IconName != value))
 				{
-					this._SocialName = value;
+					this.OnIconNameChanging(value);
+					this.SendPropertyChanging();
+					this._IconName = value;
+					this.SendPropertyChanged("IconName");
+					this.OnIconNameChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_iconExt", DbType="VarChar(10)")]
+		public string iconExt
+		{
+			get
+			{
+				return this._iconExt;
+			}
+			set
+			{
+				if ((this._iconExt != value))
+				{
+					this.OniconExtChanging(value);
+					this.SendPropertyChanging();
+					this._iconExt = value;
+					this.SendPropertyChanged("iconExt");
+					this.OniconExtChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

@@ -5,11 +5,10 @@ using System.Web;
 
 namespace GeolabOldCcar.Models
 {
-    public class Mailmodel
+    public class newIcon
     {
-        public int Id { get; set; }
+       public int id { get; set; }
+        public HttpPostedFileBase file1 { get; set; }
         public string Name { get; set; }
-        public string EmailFrom { get; set; }
-        public DateTime CreateDate { get; set; }
     }
 }

@@ -1,0 +1,106 @@
+﻿@model GeolabOldCcar.Models.Email
+
+@{
+    ViewBag.Title = "EmailDetail";
+}
+
+<h2>EmailDetail</h2>
+
+<div>
+    <h4>Email</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailTo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailSubject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailSubject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.images)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.images)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.promotions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.promotions)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.updates)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.updates)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobOffer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobOffer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.crateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.crateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+   
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -153,13 +153,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataConnect.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\EditIcon.cs" />
     <Compile Include="Models\LoginUser.cs" />
     <Compile Include="Models\Mailmodel.cs" />
+    <Compile Include="Models\newIcon.cs" />
+    <Compile Include="Models\NewSlider.cs" />
+    <Compile Include="Models\SocialEdit.cs" />
+    <Compile Include="Models\Tools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Image\trees.svg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -203,6 +209,17 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Admin\login.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Email.cshtml" />
+    <Content Include="Views\Admin\Social.cshtml" />
+    <Content Include="Views\Admin\EmailDetail.cshtml" />
+    <Content Include="Views\Admin\SocialEdit.cshtml" />
+    <Content Include="Views\Admin\AddSlide.cshtml" />
+    <Content Include="Views\Admin\Slider.cshtml" />
+    <Content Include="Views\Admin\SliderEdit.cshtml" />
+    <Content Include="Views\Admin\Icon.cshtml" />
+    <Content Include="Views\Admin\AddIcon.cshtml" />
+    <Content Include="Views\Admin\IconEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

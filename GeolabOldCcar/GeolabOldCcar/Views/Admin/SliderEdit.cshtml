@@ -1,0 +1,64 @@
+﻿@model GeolabOldCcar.Models.Slider
+
+@{
+    ViewBag.Title = "SliderEdit";
+}
+
+<h2>SliderEdit</h2>
+
+<form class="form-horizontal" role="form" method="POST" action="/Admin/SliderEdit" enctype="multipart/form-data">
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Slider</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="text" value="@Model.Id" name="id" readonly />
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="body">ფოტო</label>
+            <div class="col-md-10">
+                <div class="col-md-10">
+                    <input type="File" name="file1" />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.date, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="date" name="Date" value="@Model.date.Value" />
+
+                @Html.ValidationMessageFor(model => model.date, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="text" name="Title" value="@Model.description" />
+
+                @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+    </form>
+    <div>
+        @Html.ActionLink("Back to List", "Slider")
+    </div>

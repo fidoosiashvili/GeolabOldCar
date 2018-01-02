@@ -1,0 +1,39 @@
+﻿@model IEnumerable<GeolabOldCcar.Models.Social>
+
+@{
+    ViewBag.Title = "Social";
+}
+
+<h2>Social</h2>
+
+<img src="~/Content/Image/trees.svg" />" />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SocialUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SocialName)
+        </th>
+        <th></th>
+    </tr>
+    
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <a href="@Html.DisplayFor(modelItem => item.SocialUrl)"> @Html.DisplayFor(modelItem => item.SocialUrl)</a>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SocialName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "SocialEdit", new { id=item.id }) 
+      
+           
+        </td>
+    </tr>
+}
+
+</table>

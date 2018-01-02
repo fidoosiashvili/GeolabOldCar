@@ -1,0 +1,47 @@
+﻿@model IEnumerable<GeolabOldCcar.Models.Slider>
+
+@{
+    ViewBag.Title = "Slider";
+}
+
+<h2>Slider</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddSlide")
+</p>
+<table class="table">
+    <tr>
+       
+      
+        <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+     
+        <td>
+            @Html.DisplayFor(modelItem => item.date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            <img src="~/Content/Image/@Html.DisplayFor(modelItem => item.SliderUrl)@Html.DisplayFor(modelItem => item.SliderImageExt)" width="100px" height="100px">
+
+
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "SliderEdit", new { id=item.Id }) |
+           
+            @Html.ActionLink("Delete", "SliderDelete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
