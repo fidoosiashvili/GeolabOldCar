@@ -30,6 +30,14 @@
       <Column Name="SocialName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Icon" Member="Icons">
+    <Type Name="Icon">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IconDesc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IconName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="iconExt" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Slider" Member="Sliders">
     <Type Name="Slider">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -37,14 +45,7 @@
       <Column Name="SliderImageExt" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
       <Column Name="date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Icon" Member="Icons">
-    <Type Name="Icon">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="IconDesc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="IconName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="iconExt" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="isActiv" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

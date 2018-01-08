@@ -154,6 +154,7 @@
       <DependentUpon>DataConnect.dbml</DependentUpon>
     </Compile>
     <Compile Include="Models\EditIcon.cs" />
+    <Compile Include="Models\IndexModel.cs" />
     <Compile Include="Models\LoginUser.cs" />
     <Compile Include="Models\Mailmodel.cs" />
     <Compile Include="Models\newIcon.cs" />
@@ -254,7 +255,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Admin\login.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Email.cshtml" />
@@ -267,6 +267,7 @@
     <Content Include="Views\Admin\Icon.cshtml" />
     <Content Include="Views\Admin\AddIcon.cshtml" />
     <Content Include="Views\Admin\IconEdit.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

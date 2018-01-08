@@ -15,6 +15,8 @@ namespace GeolabOldCcar.Controllers
         // GET: Admin
         public ActionResult Index()
         {
+            ViewBag.email = db.Emails.ToList().Count;
+            ViewBag.services = db.Icons.ToList().Count;
             return View();
         }
         #region Login
@@ -40,6 +42,13 @@ namespace GeolabOldCcar.Controllers
         }
         #endregion
         #region email
+        [HttpPost]
+        public ActionResult Email(Email model)
+        {
+            db.Emails.InsertOnSubmit(model);
+            db.SubmitChanges();
+            return RedirectToAction("Home/Index");
+        }
         public ActionResult Email()
         {
 

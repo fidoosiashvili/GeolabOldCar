@@ -36,12 +36,12 @@ namespace GeolabOldCcar.Models
     partial void InsertSocial(Social instance);
     partial void UpdateSocial(Social instance);
     partial void DeleteSocial(Social instance);
-    partial void InsertSlider(Slider instance);
-    partial void UpdateSlider(Slider instance);
-    partial void DeleteSlider(Slider instance);
     partial void InsertIcon(Icon instance);
     partial void UpdateIcon(Icon instance);
     partial void DeleteIcon(Icon instance);
+    partial void InsertSlider(Slider instance);
+    partial void UpdateSlider(Slider instance);
+    partial void DeleteSlider(Slider instance);
     #endregion
 		
 		public DataConnectDataContext() : 
@@ -98,19 +98,19 @@ namespace GeolabOldCcar.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<Slider> Sliders
-		{
-			get
-			{
-				return this.GetTable<Slider>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Icon> Icons
 		{
 			get
 			{
 				return this.GetTable<Icon>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Slider> Sliders
+		{
+			get
+			{
+				return this.GetTable<Slider>();
 			}
 		}
 	}
@@ -125,7 +125,7 @@ namespace GeolabOldCcar.Models
 		
 		private string _EmailFrom;
 		
-		private string _EmailTo;
+		private string _EmailTo="Geolab";
 		
 		private string _EmailText;
 		
@@ -141,7 +141,7 @@ namespace GeolabOldCcar.Models
 		
 		private bool _JobOffer;
 		
-		private System.DateTime _crateDate;
+		private System.DateTime _crateDate= DateTime.Now;
 		
 		private string _name;
 		
@@ -614,164 +614,6 @@ namespace GeolabOldCcar.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Slider")]
-	public partial class Slider : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _SliderUrl;
-		
-		private string _SliderImageExt;
-		
-		private System.Nullable<System.DateTime> _date;
-		
-		private string _description;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnSliderUrlChanging(string value);
-    partial void OnSliderUrlChanged();
-    partial void OnSliderImageExtChanging(string value);
-    partial void OnSliderImageExtChanged();
-    partial void OndateChanging(System.Nullable<System.DateTime> value);
-    partial void OndateChanged();
-    partial void OndescriptionChanging(string value);
-    partial void OndescriptionChanged();
-    #endregion
-		
-		public Slider()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SliderUrl", DbType="NVarChar(50)")]
-		public string SliderUrl
-		{
-			get
-			{
-				return this._SliderUrl;
-			}
-			set
-			{
-				if ((this._SliderUrl != value))
-				{
-					this.OnSliderUrlChanging(value);
-					this.SendPropertyChanging();
-					this._SliderUrl = value;
-					this.SendPropertyChanged("SliderUrl");
-					this.OnSliderUrlChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SliderImageExt", DbType="NVarChar(5)")]
-		public string SliderImageExt
-		{
-			get
-			{
-				return this._SliderImageExt;
-			}
-			set
-			{
-				if ((this._SliderImageExt != value))
-				{
-					this.OnSliderImageExtChanging(value);
-					this.SendPropertyChanging();
-					this._SliderImageExt = value;
-					this.SendPropertyChanged("SliderImageExt");
-					this.OnSliderImageExtChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="Date")]
-		public System.Nullable<System.DateTime> date
-		{
-			get
-			{
-				return this._date;
-			}
-			set
-			{
-				if ((this._date != value))
-				{
-					this.OndateChanging(value);
-					this.SendPropertyChanging();
-					this._date = value;
-					this.SendPropertyChanged("date");
-					this.OndateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="NVarChar(50)")]
-		public string description
-		{
-			get
-			{
-				return this._description;
-			}
-			set
-			{
-				if ((this._description != value))
-				{
-					this.OndescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._description = value;
-					this.SendPropertyChanged("description");
-					this.OndescriptionChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Icon")]
 	public partial class Icon : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -881,6 +723,188 @@ namespace GeolabOldCcar.Models
 					this._iconExt = value;
 					this.SendPropertyChanged("iconExt");
 					this.OniconExtChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Slider")]
+	public partial class Slider : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _SliderUrl;
+		
+		private string _SliderImageExt;
+		
+		private System.Nullable<System.DateTime> _date;
+		
+		private string _description;
+		
+		private string _isActiv;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnSliderUrlChanging(string value);
+    partial void OnSliderUrlChanged();
+    partial void OnSliderImageExtChanging(string value);
+    partial void OnSliderImageExtChanged();
+    partial void OndateChanging(System.Nullable<System.DateTime> value);
+    partial void OndateChanged();
+    partial void OndescriptionChanging(string value);
+    partial void OndescriptionChanged();
+    partial void OnisActivChanging(string value);
+    partial void OnisActivChanged();
+    #endregion
+		
+		public Slider()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SliderUrl", DbType="NVarChar(50)")]
+		public string SliderUrl
+		{
+			get
+			{
+				return this._SliderUrl;
+			}
+			set
+			{
+				if ((this._SliderUrl != value))
+				{
+					this.OnSliderUrlChanging(value);
+					this.SendPropertyChanging();
+					this._SliderUrl = value;
+					this.SendPropertyChanged("SliderUrl");
+					this.OnSliderUrlChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SliderImageExt", DbType="NVarChar(5)")]
+		public string SliderImageExt
+		{
+			get
+			{
+				return this._SliderImageExt;
+			}
+			set
+			{
+				if ((this._SliderImageExt != value))
+				{
+					this.OnSliderImageExtChanging(value);
+					this.SendPropertyChanging();
+					this._SliderImageExt = value;
+					this.SendPropertyChanged("SliderImageExt");
+					this.OnSliderImageExtChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_date", DbType="Date")]
+		public System.Nullable<System.DateTime> date
+		{
+			get
+			{
+				return this._date;
+			}
+			set
+			{
+				if ((this._date != value))
+				{
+					this.OndateChanging(value);
+					this.SendPropertyChanging();
+					this._date = value;
+					this.SendPropertyChanged("date");
+					this.OndateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="NVarChar(50)")]
+		public string description
+		{
+			get
+			{
+				return this._description;
+			}
+			set
+			{
+				if ((this._description != value))
+				{
+					this.OndescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._description = value;
+					this.SendPropertyChanged("description");
+					this.OndescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_isActiv", DbType="NVarChar(50)")]
+		public string isActiv
+		{
+			get
+			{
+				return this._isActiv;
+			}
+			set
+			{
+				if ((this._isActiv != value))
+				{
+					this.OnisActivChanging(value);
+					this.SendPropertyChanging();
+					this._isActiv = value;
+					this.SendPropertyChanged("isActiv");
+					this.OnisActivChanged();
 				}
 			}
 		}
