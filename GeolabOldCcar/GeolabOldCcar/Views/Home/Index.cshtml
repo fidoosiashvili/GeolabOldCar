@@ -1,32 +1,184 @@
 ﻿@{ Layout = null;}
-@{
-    ViewBag.Title = "Home Page";
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OldCarProject</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/style.css">
+   
+</head>
+<body>
+    <div class="container-fluid  no_padding top_wrapper" id="home">
+        <nav class="site-nav clearfix">
+            <ul>
+                <li><a href="#home" class="font-RobotoCondensed-Bold"> HOME </a></li>
+                <li><a href="#service_wrapper" class="font-RobotoCondensed-Bold"> SERVICES </a></li>
+                <li><a href="#contact" class="font-RobotoCondensed-Bold"> CONTACT </a></li>
+            </ul>
+        </nav>
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+        <div class="menu-toggle">
+            <div class="hamburger"></div>
+        </div>
+        <div id="myCarousel" class="carousel slide overflow relative" data-ride="carousel">
+            <!-- Main Logo -->
+            <div class="logo col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <img class="img-responsive" id="main_logo" src="~/Content/images/auto_logo.png">
+            </div>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="photo_description">
+                        <h1 class="font-RobotoCondensed-Bold"> 27.11. </h1>
+                        <h2 class="font-Roboto-Light"> Vintage Auto Exhibition </h2>
+                    </div>
+                    <img src="~/Content/images/red_car.png" alt="Red_car" style="width:100%;">
+                </div>
+                <div class="item">
+                    <div class="photo_description">
+                        <h1 class="font-RobotoCondensed-Bold"> 21.07. </h1>
+                        <h2 class="font-Roboto-Light"> Vintage Auto Exhibition </h2>
+                    </div>
+                    <img src="~/Content/images/black_car.png" alt="Black_car" style="width:100%;">
+                </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            sadasdASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+                <div class="item">
+                    <div class="photo_description">
+                        <h1 class="font-RobotoCondensed-Bold"> 23.03. </h1>
+                        <h2 class="font-Roboto-Light"> Vintage Auto Exhibition </h2>
+                    </div>
+                    <img src="~/Content/images/white_car.png" alt="White_car" style="width:100%;">
+                </div>
+            </div>
+            <!-- Left and right controls -->
+            <a class="left carousel-control opacity1 left_control" href="#myCarousel" data-slide="prev">
+                <span class="left_arrow"> <img class="img-responsive" src="~/Content/images/arrow_left.png"> </span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control opacity1 right_control" href="#myCarousel" data-slide="next">
+                <span class="right_arrow"> <img class="img-responsive" src="~/Content/images/arrow_right.png"> </span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <div class="container no_padding" id="service_wrapper">
+        <h1 class="middle_header row font-RobotoCondensed-Bold"> The corner garage for collector cars </h1>
+        <div class="col-xs-12 col-sm-12 col-md-4  col-lg-4 ">
+            <div class="service_box">
+                <a href="#Modify" class="font-RobotoCondensed-Bold" id="service_box_description">
+                    <img src="~/Content/images/qanchi.png" id="service_box_logo"> modify
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4  col-lg-4">
+            <div class="service_box">
+                <a href="#Buy" class="font-RobotoCondensed-Bold" id="service_box_description">
+                    <img src="~/Content/images/car_key.png" id="service_box_logo"> buy
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4  col-lg-4">
+            <div class="service_box">
+                <a href="#Repair" class="font-RobotoCondensed-Bold" id="service_box_description">
+                    <img src="~/Content/images/bolt.png " id="service_box_logo"> repair
+                </a>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="container-fluid no_padding overflow" id="car_animation">
+        <div class="animation_objects relative">
+            <img src="~/Content/images/mountains.svg" class="mountains_img">
+            <img src="~/Content/images/trees.svg" class="trees_img">
+            <img src="~/Content/images/road_line.svg" class="road_line_img">
+            <img src="~/Content/images/moving_car.png" class="moving_car_img">
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-lg-push-1">
+                <div id="map"></div>
+            </div>
+        </div>
     </div>
-</div>
+    <div class="container-fluid no_padding relative" id="contact">
+        <div class="row">
+            <div class="contact_wrapper col-xs-10 col-xs-push-1 col-sm-10 col-sm-push-1 col-md-10 col-md-push-1 col-lg-8 col-lg-push-2">
+                <div class="row">
+                    <div class="hidden-xs hidden-sm hidden-md col-lg-4 no_padding">
+                        <div class="contact_information clearfix">
+                            <h1 class="font-RobotoCondensed-Bold"> Contact Information </h1>
+                            <h2 class="font-RobotoCondensed-Bold"> click to view </h2>
+                            <ul>
+                                <li><a href="https://plus.google.com/" target="_blank" class="google_plus">  </a></li>
+                                <li><a href="https://www.facebook.com" target="_blank" class="facebook_icon"> </a></li>
+                                <li><a href="https://www.twitter.com" target="_blank" class="twitter_icon"> </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 no_padding">
+                        <div class="subscribe clearfix">
+                            <h1 class="font-RobotoCondensed-Bold"> get in touch</h1>
+                            <form method="POST">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                                        <div class="subscription_part1 clearfix">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <input id="firstname" class="font-RobotoCondensed-Light" type="text" placeholder="name" name="firstname" value="" required="">
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <input class="font-RobotoCondensed-Light" type="email" name="email" placeholder="email" required="">
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <input class="font-RobotoCondensed-Light" type="text" placeholder="subject" name="subject" required="">
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <textarea class="font-RobotoCondensed-Light" name="message" placeholder="text" rows="3" cols="22" required=""></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+                                        <div class="subscription_part2">
+                                            <input type="radio" name="gender" value="1" required="">
+                                            <span class="font-RobotoCondensed-Light"> male </span>
+                                            <input type="radio" name="gender" value="2" required="">
+                                            <span class="font-RobotoCondensed-Light"> female </span>
+                                            <br><br><br><br><br>
+                                            <span class="font-RobotoCondensed-Light"> Sign up for newsletter: </span>  <br><br>
+                                            <input type="checkbox" name="Images" value="recive images"> <span class="checkbox_span"> recive images</span> <br>
+                                            <input type="checkbox" name="Promotions" value="recive promotions"> <span class="checkbox_span"> recive promotions </span> <br>
+                                            <input type="checkbox" name="Updates" value="recive updates"> <span class="checkbox_span">  recive updates </span> <br>
+                                            <input type="checkbox" name="job_offers" value="recive job offers"> <span class="checkbox_span">  recive job offers </span> <br>
+                                            <input class="font-RobotoCondensed-Bold" type="submit" value="send" onclick="alert('Thank You For Subscription')">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="socials col-xs-12 col-sm-12 col-md-12 hidden-lg">
+                        <h2 class="font-RobotoCondensed-Bold left"> click to view </h2>
+                        <ul class="right">
+                            <li><a href="https://plus.google.com/" target="_blank" class="google_plus">  </a></li>
+                            <li><a href="https://www.facebook.com" target="_blank" class="facebook_icon"> </a></li>
+                            <li><a href="https://www.twitter.com" target="_blank" class="twitter_icon"> </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <footer>
+                    <span class="font-RobotoCondensed-Bold author left"> © copyright 2017 </span>
+                    <span class="font-RobotoCondensed-Bold author right">  შექმნილია: ბერდია რომელაშვილის და ფრიდონ ოსიაშვილის მიერ.</span>
+                </footer>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="~/Content/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/app.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJf6z554b7Mv59Ti103438P8i9TZG8ZCY&callback=initMap">
+    </script>
+</body>
+</html>

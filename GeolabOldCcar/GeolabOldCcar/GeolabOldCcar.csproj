@@ -165,7 +165,40 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\fonts.css" />
+    <Content Include="Content\css\reset.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\Roboto-Light.svg" />
+    <Content Include="Content\fonts\RobotoCondensed-Bold.svg" />
+    <Content Include="Content\fonts\RobotoCondensed-Light.svg" />
+    <Content Include="Content\images\arrow_left.png" />
+    <Content Include="Content\images\arrow_right.png" />
+    <Content Include="Content\images\auto_logo.png" />
+    <Content Include="Content\images\AUTO_logo.svg" />
+    <Content Include="Content\images\auto_logo_red.png" />
+    <Content Include="Content\images\black_car.png" />
+    <Content Include="Content\images\bolt.png" />
+    <Content Include="Content\images\bolt.svg" />
+    <Content Include="Content\images\car_key.png" />
+    <Content Include="Content\images\car_key.svg" />
+    <Content Include="Content\images\circle.svg" />
+    <Content Include="Content\images\facebook_icon.svg" />
+    <Content Include="Content\images\google_icon.svg" />
+    <Content Include="Content\images\mountains.svg" />
+    <Content Include="Content\images\moving_car.png" />
+    <Content Include="Content\images\qanchi.png" />
+    <Content Include="Content\images\qanchi.svg" />
+    <Content Include="Content\images\red_car.png" />
+    <Content Include="Content\images\road_line.svg" />
+    <Content Include="Content\images\trees.svg" />
+    <Content Include="Content\images\twitter.svg" />
+    <Content Include="Content\images\white_car.png" />
     <Content Include="Content\Image\trees.svg" />
+    <Content Include="Content\js\app.js" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\jquery.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -180,6 +213,20 @@
       <LastGenOutput>DataConnect.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Content\css\bootstrap.min.css.map" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\Roboto-Light.eot" />
+    <Content Include="Content\fonts\Roboto-Light.ttf" />
+    <Content Include="Content\fonts\Roboto-Light.woff" />
+    <Content Include="Content\fonts\RobotoCondensed-Bold.eot" />
+    <Content Include="Content\fonts\RobotoCondensed-Bold.ttf" />
+    <Content Include="Content\fonts\RobotoCondensed-Bold.woff" />
+    <Content Include="Content\fonts\RobotoCondensed-Light.eot" />
+    <Content Include="Content\fonts\RobotoCondensed-Light.ttf" />
+    <Content Include="Content\fonts\RobotoCondensed-Light.woff" />
     <None Include="Models\DataConnect.dbml.layout">
       <DependentUpon>DataConnect.dbml</DependentUpon>
     </None>
